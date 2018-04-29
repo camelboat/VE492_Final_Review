@@ -56,7 +56,15 @@ ensemble learning: use multiple learning algorithms to obtain better predictive 
 
 ### 5. How to control model complexity in linear and logistic regression?
 
-Use dimension reduction or feature extraction
+Use regularization, such as weight decay to modify the training criteria.
+
+Collect more data.
+
+Use validation set to train and select hyper parameters.
+
+Use dimension reduction or feature extraction.
+
+
 
 
 ### 6. Using the Least Square as the objective function, we try to find the best set of parameters; what is the statistical justification if the underlying distribution is Gaussian?
@@ -113,9 +121,119 @@ Bayesian decision theory?
 
 
 
+### 4. What is the key assumption for graphical model? Using HMM as an example, how much computational complexity has been reduced because of this assumption?
+
+### 5. Why does EM not guarantee a global solution? What is a simple proof for that?
 
 
-### 1.
+
+### 6. Why is K-mean only an approximate and local solution for clustering?
+
+
+
+### 7. How to interpret the HMM-based inference problem from a Bayesian perspective, using the forward/backward algorithm?
+
+
+
+### 8. Show how to estimate a given hidden state for a given series of observations using the alpha and beta factors;
+
+
+
+### 9. For a Gaussian graphical model, what is the implication of sparsity for such a graphical model? How is such sparsity achieved computationally?
+
+
+
+### 10. What would be the risk using a L1 as a relaxation for the sparsity estimation?
+
+
+
+## Dimension reduction and feature representation:
+
+### 1. PCA is an example of dimensional reduction method; give a full derivation of PCA with respect to its eigenvectors; explain SVD and how it is used to solve PCA;
+
+
+
+### 2. Compare regular PCA with the low-ranked PCA, what would be advantage using the low-ranked PCA and how it is formulated?
+
+
+
+### 3. For a low rank-regularized PCA, what would be the limit of dimension reduction for a given p and n of your data?
+
+
+
+### 4. What is the key motivation (and contribution) behind deep learning, in terms of data representation?
+
+
+
+### 5. What would be the true features of an object modeling problem? Why does the feature decomposition in deep learning then a topological recombination could make a better sampling? What would be the potential problems making deep learning not a viable approach?
+
+
+
+### 6. Explain the importance of appropriate feature selection being compatible with model selection in the context model complexity;
+
+
+
+### 7. What is the key motivation behind a kernel-based method in data representation?
+
+
+
+### 8. What would be the ultimate and best representation for a high dimensional and complex problem?
+
+
+
+### 9. Give two examples to highlight the importance of selecting appropriate dimensions for feature representations.
+
+
+
+### 10. For a typical big data problem (p>>n), what considerations we will have to take when trying to select an appropriate model(for instance, to perform a SVM)?
+
+
+
+## General problems:
+
+### 1. In learning, from the two key aspects, data and model, respectively, what are the key issues we normally consider in order to obtain a better model?
+
+
+
+### 2. Why all machine learning problems are ill-posed?
+
+
+
+### 3. Describe from the classification, to clustering, to HMM, to more complex graphical modeling, what we are trying to do for a more expressive model?
+
+
+
+### 4. What are the potential risks we could take when trying to perform a logistic regression for classification using a sparsity-based regularization?
+
+
+
+### 5. What are the potential risks we could take when trying to perform a linear regression using a sparsity-based regularization?
+
+
+
+### 6. Give five different structural considerations a search can be constrained with corresponding simple scalars;
+
+
+
+### 7. Give all universal, engineering, and computational principles that we have learned in this course to obtain both conceptually low-complexity model and computationally tractable algorithms?
+
+
+
+### 8. Why data representation is at least equally as important as the actual modeling, the so-called representation learning?
+
+
+
+### 9. How does the multiple-layer structure(deep learning) become attractive again?
+
+
+
+### 10. What is the trend of AI research and development for the next 5-10 years?
+
+
+
+## Other general problems
+
+### 1. SVM is a linear classifier with a number of possible risks to be incurred, particularly with very high dimensional and overlapping problems. Use a simple and formal mathematics to show and justify:
 
 (a) how a margin-based linear classifier like SVM can be even more robust than Logistic regression?
 
@@ -127,17 +245,21 @@ first use dimension reduction, then use kernel function to control the overlappi
 
 
 
-### 2.
+### 2. Why a convolution-based deep learning might be a good alternative to address the dilemma of being more selective towards the features of an object, while remaining invariant toward anything else irrelevant to the aspect of interests?
 
 (a) convolution-based deep learning doesn't use the apparent feature of an object selected by human. It can extract feature by itself from data, and learn about the object's feature related to the background environment, which is more important than feature itself, and won't be affected by this dilemma.
+
+### Why a linear regression with regulations would result in features which are usually conceptually and structurally not meaningful?
 
 (b) linear regression may use features that are not orthogonal to each other, are not normalized, and may even have much relationship with others. Unlike convolution-based deep learning, we can't make sure if feature we select for linear regression indeed have relation with their labels, hence results from these features may not been meaningful.
 
 
 
-### 3.
+### 3. There are a number of nonlinear approaches to learn complex and high dimensional problems, including kernel and neural networks, please discuss the key differences in feature selection between these two alternatives, and their suitability
 
 (a) kernel is one complex function applied to all data, while neural networks use a certain simple function to  separate those nonlinear data into many small parts.
+
+### what are the major difficulties using a complex neural network as a non-linear classifier?
 
 (b) 奇函数的选择
 
@@ -149,51 +271,45 @@ first use dimension reduction, then use kernel function to control the overlappi
 
 
 
-### 4.
+### 4. For any learning problems why a gradient-based search is much more favorable than other types of searches?
 
-(a) why a gradient-based search is much more favorable than other types of searches?
-
-如果没有梯度的方向给定的确定性和唯一性， you have to 穷举各个方向的参数变化
+(a) 如果没有梯度的方向给定的确定性和唯一性， you have to 穷举各个方向的参数变化
 
 (b) what would be the possible ramifications of having to impose some kinds of sequentiality in both providing data and observing results?
 
 
 
-### 5.
-
-(a) use linear regression as the example to explain why L1 is more aggressive when trying to obtain sparser solutions compared to L2?
+### 5. (a) use linear regression as the example to explain why L1 is more aggressive when trying to obtain sparser solutions compared to L2?
 
 要求了解四个范数
 
 
 
+### Under what conditions L1 might be a good approximation of the truth, which is L0?
+
 (b) 
 
-### 6.
+### 6. What is the key difference between a supervised vs. unsupervised learnings
 
-(a) What is the key difference between a supervised vs. unsupervised learnings
+(a) when an unlabeled data is presented, it has to been marginally estimated which label it should has. Although you can guess for many times, you can't make sure it is the global solution or it is a local solution.
 
-when an unlabeled data is presented, it has to been marginally estimated which label it should has. Although you can guess for many times, you can't make sure it is the global solution or it is a local solution.
+### why unsupervised learning does not guaranty a global solution?
 
-(b) why unsupervised learning does not guaranty a global solution?
-
-search for mathematical formulas
+(b) search for mathematical formulas
 
 
 
-### 7.
-
-(a) provide a Bayesian perspective about the forwarding message to enhance an inference
+### 7. For HMM, provide a Bayesian perspective about the forwarding message to enhance an inference
 
 $\alpha$ recursion?
 
-(b) how to design a more generalizable HMM which can still converge efficiently?
+### how to design a more generalizable HMM which can still converge efficiently?
 
-the first several data should be the strongest features, which can give you the prior to deal with other data.
+(b) the first several data should be the strongest features, which can give you the prior to deal with other data.
 
 
 
-### 8. 
+### 8. Using a more general graphical model to discuss the depth of a developing prior-distribution as to its contribution for a possible inference; 
 
 (a)
 
@@ -201,13 +317,15 @@ depth increase,
 
 
 
+### how local likelihoods can be used as the inductions to facilitate the developing inference?
+
 (b)
 
 结果和先验相符
 
 
 
-### 9.
+### 9. Learning from observation is an ill-posed problem, however we still work on it and even try to obtain convex, linear, and possibly generalizable solutions. Please discuss what key strategies in data mining we have developed that might have remedied the ill-posed nature at least in part?
 
 (a)
 
@@ -215,11 +333,13 @@ depth increase,
 
 
 
+### Why in general linear model are more robust than more complex ones?
+
 (b)
 
 
 
-### 10.
+### 10. Using logistic regression and likelihood estimation for learning a mixture model(such as the Gaussian Mixture Model), please using Bayesian perspective to discuss the differences and consistencies of the two approaches;
 
 
 
@@ -227,3 +347,4 @@ depth increase,
 
 
 
+### Why logistic function is a universal posterior for many mixture models?
